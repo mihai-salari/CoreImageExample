@@ -14,14 +14,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    required override init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*
         let sepiaColor = CIColor(red: 0.76, green: 0.65, blue: 0.54)
         let monochromeFilter = CIFilter(name: "CIColorMonochrome",
                 withInputParameters: [
@@ -46,15 +45,6 @@ class ViewController: UIViewController {
                 let uiImage = UIImage(CGImage: cgImage)
                 imageView.image = uiImage;
             }
-        }
-        */
-        
-        let names = self.filterNames()
-        for name in names {
-            guard let filter = CIFilter(name: name) else {
-                continue
-            }
-            self.printKeys(filter)
         }
     }
 

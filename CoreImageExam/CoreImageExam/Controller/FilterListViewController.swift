@@ -20,8 +20,12 @@ class FilterListViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         self.navigationItem.title = "CIFilter List";
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
         filterNames = CIFilter.filterNamesInCategory(kCICategoryBuiltIn)
+        for name in filterNames! {
+            print(name)
+        }
         
         self.tableView.delegate = self
         self.tableView.dataSource = self;
