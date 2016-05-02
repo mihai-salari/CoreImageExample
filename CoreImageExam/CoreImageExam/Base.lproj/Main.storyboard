@@ -121,6 +121,49 @@
             </objects>
             <point key="canvasLocation" x="1090" y="1155"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="3JM-Ge-SoP">
+            <objects>
+                <viewController storyboardIdentifier="TestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SlD-mf-lO0" customClass="TestViewController" customModule="CoreImageExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0De-Nq-Hdn"/>
+                        <viewControllerLayoutGuide type="bottom" id="NlC-nT-r3O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PgT-UV-SEF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gohho" translatesAutoresizingMaskIntoConstraints="NO" id="ixX-Sk-xn1">
+                                <rect key="frame" x="117" y="0.0" width="366" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ixX-Sk-xn1" secondAttribute="height" multiplier="550:375" id="LiP-1T-A0E"/>
+                                    <constraint firstAttribute="width" constant="435" id="WO0-hm-00z"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="cxN-ex-rxV"/>
+                                    <constraint firstAttribute="height" constant="265.5" id="sc7-rd-mC4"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WO0-hm-00z"/>
+                                        <exclude reference="sc7-rd-mC4"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ixX-Sk-xn1" firstAttribute="centerX" secondItem="PgT-UV-SEF" secondAttribute="centerX" id="CYs-NP-Wgo"/>
+                            <constraint firstItem="ixX-Sk-xn1" firstAttribute="top" secondItem="0De-Nq-Hdn" secondAttribute="bottom" constant="-20" id="TKp-Ic-jsw"/>
+                            <constraint firstItem="ixX-Sk-xn1" firstAttribute="width" secondItem="ixX-Sk-xn1" secondAttribute="height" multiplier="550:375" id="d33-1Y-gWu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ixX-Sk-xn1" id="Pk5-Iz-LGK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGx-cp-fUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="1847"/>
+        </scene>
         <!--Filter List View Controller-->
         <scene sceneID="AiJ-4M-hgD">
             <objects>
@@ -162,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L9T-Kx-Oxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444" y="1148"/>
+            <point key="canvasLocation" x="447" y="1155"/>
         </scene>
     </scenes>
     <resources>

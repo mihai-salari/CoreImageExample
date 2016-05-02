@@ -20,6 +20,7 @@ class FilterListViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         self.navigationItem.title = "CIFilter List";
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Test", style: .Plain, target: self, action: "showTest:")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
         filterNames = CIFilter.filterNamesInCategory(kCICategoryBuiltIn)
@@ -31,7 +32,7 @@ class FilterListViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableView.dataSource = self;
     }
     
-    // MARK: UITableViewDataSource
+    // MARK: - UITableViewDataSource
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -50,12 +51,11 @@ class FilterListViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    // MARK: UITableViewDelegate
+    // MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return CGFloat(44.0)
     }
-    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -63,5 +63,13 @@ class FilterListViewController: UIViewController, UITableViewDelegate, UITableVi
         let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FilterDetailViewController") as! FilterDetailViewController
         detailVC.filterName = self.filterNames?[indexPath.row]
         self.showViewController(detailVC, sender: self)
+    }
+    
+    // MARK: - 
+    
+    func showTest(sender: UIBarButtonItem) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("TestViewController")
+        let nc = UINavigationController(rootViewController: vc)
+        self.presentViewController(nc, animated: true, completion: nil)
     }
 }

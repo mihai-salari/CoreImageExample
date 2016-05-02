@@ -2,18 +2,20 @@
 <module type="CIDR_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/CoreImageExamTests/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CoreImageExamTests/CoreImageExamTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/CoreImage/Filter.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/CoreImage/Blur/BoxBlur.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/CoreImage/Radius.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/AppDelegate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Controller/TestViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Controller/FilterListViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Controller/FilterAttributeCell.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Controller/FilterDetailViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Controller/ViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CoreImageExam/Base.lproj/Main.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CoreImageExamTests/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CoreImageExamTests/CoreImageExamTests.swift" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/CoreImageExam-ddyjjngagzntfhhiqsvrnxapdtni/Build/Intermediates/CoreImageExam.build/Debug-iphoneos/CoreImageExam.build/DerivedSources" />
     <orderEntry type="sourceFolder" forTests="false" />

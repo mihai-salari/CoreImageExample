@@ -10,7 +10,9 @@
 		5572E05DB3D3F868EDC9B928 /* FilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572E7C39A3B976963D3E953 /* FilterListViewController.swift */; };
 		5572E460D55D2684FCBD0A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5572E3EF5DCC93DFF0BD73D1 /* LaunchScreen.storyboard */; };
 		5572E613F5A067B39764A18C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5572E343CD6DF030C78C89E4 /* Assets.xcassets */; };
-		5572E76FCD6306208E7814D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572E03709F467D0CBADA2EF /* ViewController.swift */; };
+		5572E6BB3270C58F3301158C /* BoxBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572EB3BCB05C73988FE8B56 /* BoxBlur.swift */; };
+		5572E73C0E4C59267718DB25 /* Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572E1879E95825FDDB5C035 /* Radius.swift */; };
+		5572E76FCD6306208E7814D4 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572E03709F467D0CBADA2EF /* TestViewController.swift */; };
 		5572E842441E855ADA989028 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572E931CDC2A23736AD0D39 /* AppDelegate.swift */; };
 		5572E8561AE6EDA7C68D1733 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5572EB0824E05A825111358A /* Filter.swift */; };
 		5572EABCDFD98B408EF2C878 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5572E90D24AFA433EF13A385 /* Info.plist */; };
@@ -32,7 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5572E03709F467D0CBADA2EF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5572E03709F467D0CBADA2EF /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		5572E1879E95825FDDB5C035 /* Radius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radius.swift; sourceTree = "<group>"; };
 		5572E285D37670721FE35D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5572E343CD6DF030C78C89E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5572E6623D3E9C9E85238BE8 /* CoreImageExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreImageExamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +44,7 @@
 		5572E931CDC2A23736AD0D39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5572E944DD6D839D5704313A /* CoreImageExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageExamTests.swift; sourceTree = "<group>"; };
 		5572EB0824E05A825111358A /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		5572EB3BCB05C73988FE8B56 /* BoxBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxBlur.swift; sourceTree = "<group>"; };
 		5572ED00BA0E7CC791CC009D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoreImageExam/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		5572EE96CF68F931CE8B8683 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5572EEEA76095C2B41103E64 /* CoreImageExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreImageExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		5572E782E1E68A4E96B6447B /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				5572EB3BCB05C73988FE8B56 /* BoxBlur.swift */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
 		5572E89B61476841411144FC /* CoreImageExamTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				5572EB0824E05A825111358A /* Filter.swift */,
+				5572E782E1E68A4E96B6447B /* Blur */,
+				5572E1879E95825FDDB5C035 /* Radius.swift */,
 			);
 			path = CoreImage;
 			sourceTree = "<group>";
@@ -104,7 +118,7 @@
 		5572ED574297460F71881F76 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5572E03709F467D0CBADA2EF /* ViewController.swift */,
+				5572E03709F467D0CBADA2EF /* TestViewController.swift */,
 				5572E7C39A3B976963D3E953 /* FilterListViewController.swift */,
 				7E174A511CD4EE9A00EEAFDE /* FilterDetailViewController.swift */,
 				7E419A231CD5C1DB004C335D /* FilterAttributeCell.swift */,
@@ -229,10 +243,12 @@
 			files = (
 				5572E842441E855ADA989028 /* AppDelegate.swift in Sources */,
 				7E419A241CD5C1DB004C335D /* FilterAttributeCell.swift in Sources */,
-				5572E76FCD6306208E7814D4 /* ViewController.swift in Sources */,
+				5572E76FCD6306208E7814D4 /* TestViewController.swift in Sources */,
 				7E174A521CD4EE9A00EEAFDE /* FilterDetailViewController.swift in Sources */,
 				5572E05DB3D3F868EDC9B928 /* FilterListViewController.swift in Sources */,
 				5572E8561AE6EDA7C68D1733 /* Filter.swift in Sources */,
+				5572E6BB3270C58F3301158C /* BoxBlur.swift in Sources */,
+				5572E73C0E4C59267718DB25 /* Radius.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

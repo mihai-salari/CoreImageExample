@@ -9,11 +9,9 @@ import CoreImage
 
 public protocol FilterProcessing {
     
-    var name: String { get }
-    var filter: CIFilter { get set }
-    var inputImage: CIImage? { get set }
+    var filter: CIFilter { get }
     
-    func input(image: UIImage)
+    func input(image: UIImage) -> Self
     func outputCIImage() -> CIImage 
     func outputCGImage() -> CGImage
     func outputUIImage() -> UIImage
@@ -24,19 +22,20 @@ extension FilterProcessing {
     
     // MARK: - Input
     
-    mutating func input(image: UIImage) {
+    func input(image: UIImage) -> Self {
         guard let ciImage = CIImage(image: image) else {
-            return
+            return self
         }
-        self.inputImage = ciImage
         self.filter.setValue(ciImage, forKey: kCIInputImageKey)
+        
+        return self
     }
     
-    // MARK: - Out put
+    // MARK: - Output
     
     func outputCIImage() -> CIImage {
         guard let ciImage = self.filter.outputImage else {
-            if let input = self.inputImage {
+            if let input = self.filter.valueForKey(kCIInputImageKey) as! CIImage? {
                 return input
             } else {
                 return CIImage.emptyImage()
@@ -46,7 +45,7 @@ extension FilterProcessing {
     }
     
     func outputCGImage() -> CGImage {
-        guard let input = self.inputImage else {
+        guard let input = self.filter.valueForKey(kCIInputImageKey) as! CIImage? else {
             return UIImage().CGImage!
         }
         
