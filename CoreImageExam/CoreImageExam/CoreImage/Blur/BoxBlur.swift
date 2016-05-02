@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 import CoreImage
 
-final class BoxBlur: FilterProcessing, Radius {
+final class BoxBlur: ImageProcessable, Radius {
     
     let filter: CIFilter = CIFilter(name: "CIBoxBlur")!
     

@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 import CoreImage
 
-public protocol FilterProcessing {
+public protocol ImageProcessable {
     
     var filter: CIFilter { get }
     
@@ -18,7 +18,7 @@ public protocol FilterProcessing {
     
 }
 
-extension FilterProcessing {
+extension ImageProcessable {
     
     // MARK: - Input
     
