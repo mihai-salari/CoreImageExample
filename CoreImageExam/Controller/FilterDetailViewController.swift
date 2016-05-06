@@ -17,7 +17,6 @@ class FilterDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     var filterName: String?
-    var filter: CIFilter?
     var inputKeys: [String]?
     var outputKeys: [String]?
     var attributes: [String : AnyObject]? 
@@ -54,14 +53,17 @@ class FilterDetailViewController: UIViewController, UITableViewDelegate, UITable
             return
         }
         
-        let inputImage = CIImage(image: originImage)
-        guard let input = inputImage, output = filter.outputImage else {
+        guard let inputImage = CIImage(image: originImage) else {
             return
         }
         
         filter.setValue(inputImage, forKey: "inputImage")
+        guard let outputImage = filter.outputImage else {
+            return
+        }
+        
         let context = CIContext(options: nil)
-        let cgImage = context.createCGImage(output, fromRect: input.extent)
+        let cgImage = context.createCGImage(outputImage, fromRect: inputImage.extent)
         self.imageView?.image = UIImage(CGImage: cgImage)
         
     }
