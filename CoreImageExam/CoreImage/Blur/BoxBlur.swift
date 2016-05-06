@@ -10,7 +10,7 @@ import CoreImage
 final class BoxBlur: Radius {
     
     let filter = CIFilter(name: "CIBoxBlur")!
-    let minRadius = 1
-    let maxRadius = 100
+    let minRadius = 1.0
+    let maxRadius = 100.0
     
 }

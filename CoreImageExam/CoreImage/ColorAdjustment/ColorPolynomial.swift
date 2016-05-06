@@ -6,27 +6,12 @@
 import Foundation
 import CoreImage
 
-final class ColorPolynomial: ImageProcessable {
+final class ColorPolynomial: Polynomial {
     
     let filter = CIFilter(name: "CIColorPolynomial")!
     
-    func redCoefficient(x: CGFloat, y: CGFloat, z: CGFloat, w: CGFloat) -> ColorPolynomial {
-        self.filter.setValue(CIVector(x: x, y: y, z: z, w: w), forKey: "inputRedCoefficient")
-        return self
-    }
-    
-    func greenCoefficient(x: CGFloat, y: CGFloat, z: CGFloat, w: CGFloat) -> ColorPolynomial {
-        self.filter.setValue(CIVector(x: x, y: y, z: z, w: w), forKey: "inputGreenCoefficient")
-        return self
-    }
-    
-    func blueCoefficient(x: CGFloat, y: CGFloat, z: CGFloat, w: CGFloat) -> ColorPolynomial {
-        self.filter.setValue(CIVector(x: x, y: y, z: z, w: w), forKey: "inputBlueCoefficient")
-        return self
-    }
-    
-    func alphaCoefficient(x: CGFloat, y: CGFloat, z: CGFloat, w: CGFloat) -> ColorPolynomial {
-        self.filter.setValue(CIVector(x: x, y: y, z: z, w: w), forKey: "inputAlphaCoefficient")
+    func alphaCoefficients(x: CGFloat, y: CGFloat, z: CGFloat, w: CGFloat) -> ColorPolynomial {
+        self.filter.setValue(CIVector(x: x, y: y, z: z, w: w), forKey: "inputAlphaCoefficients")
         return self
     }
     
