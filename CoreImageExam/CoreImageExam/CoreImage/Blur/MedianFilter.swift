@@ -4,13 +4,11 @@
 //
 
 import Foundation
-import UIKit
 import CoreImage
 
-final class BoxBlur: Radius {
+// TODO: iOS9
+final class MedianFilter: ImageProcessable {
     
-    let filter = CIFilter(name: "CIBoxBlur")!
-    let minRadius = 1
-    let maxRadius = 100
+    let filter: CIFilter = CIFilter(name: "CIMedianFilter")!
     
 }

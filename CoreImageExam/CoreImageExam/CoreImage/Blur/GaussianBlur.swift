@@ -7,10 +7,10 @@ import Foundation
 import UIKit
 import CoreImage
 
-final class BoxBlur: Radius {
+final class GaussianBlur: Radius {
     
-    let filter = CIFilter(name: "CIBoxBlur")!
-    let minRadius = 1
+    let filter = CIFilter(name: "GaussianBlur")!
+    let minRadius = 0
     let maxRadius = 100
     
 }

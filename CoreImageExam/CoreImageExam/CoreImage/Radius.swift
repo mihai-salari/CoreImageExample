@@ -4,29 +4,22 @@
 //
 
 import Foundation
+import CoreImage
 
-protocol Radius {
+protocol Radius: ImageProcessable {
     
     var minRadius: Int { get }
     var maxRadius: Int { get }
     
     func radius(radius: Int) -> Self
-    func convertNumber(radius: Int) -> NSNumber
+    
 }
 
 extension Radius {
     
-    func convertNumber(radius: Int) -> NSNumber {
-        var param = radius
-        if param > maxRadius {
-            param = maxRadius
-        }
-        
-        if param < minRadius {
-            param = minRadius
-        }
-        
-        return NSNumber(long: param)
+    func radius(radius: Int) -> Self {
+        self.filter.setValue(NSNumber.convertInt(radius, min: minRadius, max: maxRadius), forKey: kCIInputRadiusKey)
+        return self
     }
     
 }

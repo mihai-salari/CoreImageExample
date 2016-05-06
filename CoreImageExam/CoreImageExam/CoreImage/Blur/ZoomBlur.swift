@@ -4,13 +4,12 @@
 //
 
 import Foundation
-import UIKit
 import CoreImage
 
-final class BoxBlur: Radius {
+final class ZoomBlur: Center, Amount {
     
-    let filter = CIFilter(name: "CIBoxBlur")!
-    let minRadius = 1
-    let maxRadius = 100
+    let filter = CIFilter(name: "CIZoomBlur")!
+    let minAmount = 0.0
+    let maxAmount = 200.0
     
 }

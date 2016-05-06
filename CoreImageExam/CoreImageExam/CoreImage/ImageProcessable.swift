@@ -15,7 +15,7 @@ public protocol ImageProcessable {
     func outputCIImage() -> CIImage 
     func outputCGImage() -> CGImage
     func outputUIImage() -> UIImage
-    
+    func composite(processable: ImageProcessable) -> ImageProcessable  
 }
 
 extension ImageProcessable {
@@ -55,5 +55,12 @@ extension ImageProcessable {
     
     func outputUIImage() -> UIImage {
         return UIImage(CGImage: self.outputCGImage())
+    }
+    
+    // MARK: -
+    
+    func composite(processable: ImageProcessable) -> ImageProcessable {
+        self.filter.setValue(processable.outputCIImage(), forKey: kCIInputImageKey)
+        return self
     }
 }

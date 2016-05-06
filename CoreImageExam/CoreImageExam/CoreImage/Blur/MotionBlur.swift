@@ -4,13 +4,12 @@
 //
 
 import Foundation
-import UIKit
 import CoreImage
 
-final class BoxBlur: Radius {
+final class MotionBlur: Radius, Angle {
     
-    let filter = CIFilter(name: "CIBoxBlur")!
-    let minRadius = 1
+    let filter = CIFilter(name: "CIMotionBlur")!
+    let minRadius = 0
     let maxRadius = 100
     
 }

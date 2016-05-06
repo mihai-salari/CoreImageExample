@@ -7,10 +7,10 @@ import Foundation
 import UIKit
 import CoreImage
 
-final class BoxBlur: Radius {
+final class MaskedVariableBlur: Mask {
     
-    let filter = CIFilter(name: "CIBoxBlur")!
-    let minRadius = 1
-    let maxRadius = 100
+    let filter = CIFilter(name: "CIMaskedVariableBlur")!
+    let minRadius = 0
+    let maxRadius = 5
     
 }
