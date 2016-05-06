@@ -10,13 +10,13 @@ final class TemperatureAndTint: ImageProcessable {
     
     let filter = CIFilter(name: "CITemperatureAndTint")!
     
-    func neutral(neutral: CIVector) -> TemperatureAndTint {
-        self.filter.setValue(neutral, forKey: "inputNeutral")
+    func neutral(x: CGFloat, y: CGFloat) -> TemperatureAndTint {
+        self.filter.setValue(CIVector(x: x, y: y), forKey: "inputNeutral")
         return self
     }
     
-    func targetNeutral(targetNeutral: CIVector) -> TemperatureAndTint {
-        self.filter.setValue(targetNeutral, forKey: "inputTargetNeutral")
+    func targetNeutral(x: CGFloat, y: CGFloat) -> TemperatureAndTint {
+        self.filter.setValue(CIVector(x: x, y: y), forKey: "inputTargetNeutral")
         return self
     }
     
