@@ -380,7 +380,7 @@
 				5572EC61CEDB3ECEBE4D7014 /* Mask.swift */,
 				5572E271CDE01DFFF9BFF432 /* Angle.swift */,
 				5572E36F2F0D7E6B6CCF549D /* NoiseLevel.swift */,
-				5572EEAA307AD157598F923D /* extension */,
+				5572EEAA307AD157598F923D /* Extension */,
 				5572E52DAE0B4569A7E75B73 /* Sharpness.swift */,
 				5572EED723B2C3DDAAB87E3C /* Center.swift */,
 				5572E9FDB8E0C34B0BCC9294 /* Amount.swift */,
@@ -412,12 +412,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5572EEAA307AD157598F923D /* extension */ = {
+		5572EEAA307AD157598F923D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				5572EE259DC43D17143783A1 /* NSNumber+Limit.swift */,
 			);
-			path = extension;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		5572EFEDE021139AE0295029 /* CoreImageExam */ = {
