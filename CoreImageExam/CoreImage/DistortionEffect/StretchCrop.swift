@@ -7,21 +7,37 @@ import Foundation
 import CoreImage
 
 final class StretchCrop: Processable {
-    // TODO:
+    
     let filter = CIFilter(name: "CIStretchCrop")!
     
-    func size() -> StretchCrop {
-        
+    var minCropAmountValue: Float {
+        return self.minValue(inputKey: "inputCropAmount")
+    }
+    
+    var maxCropAmountValue: Float {
+        return self.maxValue(inputKey: "inputCropAmount")
+    }
+    
+    var minCenterStretchAmountValue: Float {
+        return self.minValue(inputKey: "inputCenterStretchAmount")
+    }
+    
+    var maxCenterStretchAmountValue: Float {
+        return self.maxValue(inputKey: "inputCenterStretchAmount")
+    }
+    
+    func size(size: CGRect) -> StretchCrop {
+        self.filter.setValue(CIVector(CGRect: size), forKey: "inputSize")
         return self
     }
     
-    func inputCropAmount() -> StretchCrop {
-        
+    func cropAmount(cropAmount: Float) -> StretchCrop {
+        self.filter.setValue(NSNumber.convertFloat(cropAmount, min: self.minCropAmountValue, max: self.maxCropAmountValue), forKey: "inputCropAmount")
         return self
     }
     
-    func inputCenterStretchAmount() -> StretchCrop {
-        
+    func centerStretchAmount(stretchAmount: Float) -> StretchCrop {
+        self.filter.setValue(NSNumber.convertFloat(stretchAmount, min: self.minCenterStretchAmountValue, max: self.maxCenterStretchAmountValue), forKey: "inputCenterStretchAmount")
         return self
     }
     
