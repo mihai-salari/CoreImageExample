@@ -19,7 +19,7 @@ final class ColorPosterize: Processable {
     }
     
     func levels(levels: Float) -> ColorPosterize {
-        self.filter.setValue(NSNumber.convertFloat(levels, min: self.minLevelsValue, max: self.maxLevelsValue), forKey: "inputLevels")
+        self.filter.setValue(NSNumber.floatNumber(levels, min: self.minLevelsValue, max: self.maxLevelsValue), forKey: "inputLevels")
         return self
     }
     

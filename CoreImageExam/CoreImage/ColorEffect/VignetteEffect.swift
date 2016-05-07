@@ -19,7 +19,7 @@ final class VignetteEffect: Center, Radius, Intensity {
     }
     
     func fallOff(fallOff: Float) -> VignetteEffect {
-        self.filter.setValue(NSNumber.convertFloat(fallOff, min: self.minFallOffValue, max: self.maxFallOffValue), forKey: "inputFallOff")
+        self.filter.setValue(NSNumber.floatNumber(fallOff, min: self.minFallOffValue, max: self.maxFallOffValue), forKey: "inputFallOff")
         return self
     }
     

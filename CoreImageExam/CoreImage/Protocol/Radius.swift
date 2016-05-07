@@ -26,7 +26,7 @@ extension Radius {
     }
     
     func radius(radius: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(radius, min: self.minRadiusValue, max: self.maxRadiusValue), forKey: kCIInputRadiusKey)
+        self.filter.setValue(NSNumber.floatNumber(radius, min: self.minRadiusValue, max: self.maxRadiusValue), forKey: kCIInputRadiusKey)
         return self
     }
     

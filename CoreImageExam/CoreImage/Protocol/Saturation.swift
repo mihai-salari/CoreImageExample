@@ -26,7 +26,7 @@ extension Saturation {
     }
     
     func saturation(saturation: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(saturation, min: self.minSaturationValue, max: self.maxSaturationValue), forKey: kCIInputSaturationKey)
+        self.filter.setValue(NSNumber.floatNumber(saturation, min: self.minSaturationValue, max: self.maxSaturationValue), forKey: kCIInputSaturationKey)
         return self
     }
     

@@ -26,7 +26,7 @@ extension Sharpness {
     }
     
     func sharpness(sharpness: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(sharpness, min: self.minSharpnessValue, max: self.maxSharpnessValue), forKey: kCIInputSharpnessKey)
+        self.filter.setValue(NSNumber.floatNumber(sharpness, min: self.minSharpnessValue, max: self.maxSharpnessValue), forKey: kCIInputSharpnessKey)
         return self;
     }
     

@@ -26,7 +26,7 @@ extension Amount {
     }
     
     func amount(amount: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(amount, min: self.minAmountValue, max: self.maxAmountValue), forKey: "inputAmount")
+        self.filter.setValue(NSNumber.floatNumber(amount, min: self.minAmountValue, max: self.maxAmountValue), forKey: "inputAmount")
         return self
     }
     

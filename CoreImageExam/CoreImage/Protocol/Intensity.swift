@@ -26,7 +26,7 @@ extension Intensity {
     }
     
     func intensity(intensity: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(intensity, min: self.minIntensityValue, max: self.maxIntensityValue), forKey: kCIInputIntensityKey)
+        self.filter.setValue(NSNumber.floatNumber(intensity, min: self.minIntensityValue, max: self.maxIntensityValue), forKey: kCIInputIntensityKey)
         return self
     }
     

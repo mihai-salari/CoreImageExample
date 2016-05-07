@@ -26,7 +26,7 @@ extension Width {
     }
     
     func width(width: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(width, min: self.minWidthValue, max: self.maxWidthValue), forKey: kCIInputWidthKey)
+        self.filter.setValue(NSNumber.floatNumber(width, min: self.minWidthValue, max: self.maxWidthValue), forKey: kCIInputWidthKey)
         return self
     }
     

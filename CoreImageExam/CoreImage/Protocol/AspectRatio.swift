@@ -26,7 +26,7 @@ extension AspectRatio {
     }
     
     func aspectRatio(ratio: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(ratio, min: self.minRationValue, max:self.maxRationValue), forKey: kCIInputAspectRatioKey)
+        self.filter.setValue(NSNumber.floatNumber(ratio, min: self.minRationValue, max:self.maxRationValue), forKey: kCIInputAspectRatioKey)
         return self
     }
     

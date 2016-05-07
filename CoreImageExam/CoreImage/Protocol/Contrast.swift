@@ -26,7 +26,7 @@ extension Contrast {
     }
     
     func contrast(contrast: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(contrast, min: self.minContrastValue, max: self.maxContrastValue), forKey: kCIInputContrastKey)
+        self.filter.setValue(NSNumber.floatNumber(contrast, min: self.minContrastValue, max: self.maxContrastValue), forKey: kCIInputContrastKey)
         return self
     }
     

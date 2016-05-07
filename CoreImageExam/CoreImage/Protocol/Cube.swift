@@ -32,7 +32,7 @@ extension Cube {
     }
     
     func cubeDimension(dimension: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(dimension, min: self.minDimensionValue, max: self.maxDimensionValue), forKey: "inputCubeDimension")
+        self.filter.setValue(NSNumber.floatNumber(dimension, min: self.minDimensionValue, max: self.maxDimensionValue), forKey: "inputCubeDimension")
         return self
     }
     

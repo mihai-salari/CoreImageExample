@@ -26,7 +26,7 @@ extension NoiseLevel {
     }
     
     func noise(noise: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(noise, min: self.minNoiseValue, max: self.maxNoiseValue), forKey: "inputNoiseLevel")
+        self.filter.setValue(NSNumber.floatNumber(noise, min: self.minNoiseValue, max: self.maxNoiseValue), forKey: "inputNoiseLevel")
         return self
     }
     

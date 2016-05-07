@@ -19,7 +19,7 @@ final class GammaAdjust: Processable {
     }
     
     func power(power: Float) -> GammaAdjust {
-        self.filter.setValue(NSNumber.convertFloat(power, min: self.minPowerValue, max: self.maxPowerValue), forKey: "inputPower")
+        self.filter.setValue(NSNumber.floatNumber(power, min: self.minPowerValue, max: self.maxPowerValue), forKey: "inputPower")
         return self
     }
     

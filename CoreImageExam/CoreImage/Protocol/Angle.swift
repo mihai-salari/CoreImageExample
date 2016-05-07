@@ -26,7 +26,7 @@ extension Angle {
     }
     
     func angle(angle: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(angle, min: self.minAngleValue, max: self.maxAngleValue), forKey: kCIInputAngleKey)
+        self.filter.setValue(NSNumber.floatNumber(angle, min: self.minAngleValue, max: self.maxAngleValue), forKey: kCIInputAngleKey)
         return self
     }
     

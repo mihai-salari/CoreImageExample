@@ -32,12 +32,12 @@ final class StretchCrop: Processable {
     }
     
     func cropAmount(cropAmount: Float) -> StretchCrop {
-        self.filter.setValue(NSNumber.convertFloat(cropAmount, min: self.minCropAmountValue, max: self.maxCropAmountValue), forKey: "inputCropAmount")
+        self.filter.setValue(NSNumber.floatNumber(cropAmount, min: self.minCropAmountValue, max: self.maxCropAmountValue), forKey: "inputCropAmount")
         return self
     }
     
     func centerStretchAmount(stretchAmount: Float) -> StretchCrop {
-        self.filter.setValue(NSNumber.convertFloat(stretchAmount, min: self.minCenterStretchAmountValue, max: self.maxCenterStretchAmountValue), forKey: "inputCenterStretchAmount")
+        self.filter.setValue(NSNumber.floatNumber(stretchAmount, min: self.minCenterStretchAmountValue, max: self.maxCenterStretchAmountValue), forKey: "inputCenterStretchAmount")
         return self
     }
     

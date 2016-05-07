@@ -26,7 +26,7 @@ extension Rotation {
     }
     
     func rotation(rotation: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(rotation, min: self.minRotationValue, max: self.maxRotationValue), forKey: "inputRotation")
+        self.filter.setValue(NSNumber.floatNumber(rotation, min: self.minRotationValue, max: self.maxRotationValue), forKey: "inputRotation")
         return self
     }
     

@@ -26,7 +26,7 @@ extension EV {
     }
     
     func EV(ev: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(ev, min: self.minEvValue, max: self.maxEvValue), forKey: kCIInputEVKey)
+        self.filter.setValue(NSNumber.floatNumber(ev, min: self.minEvValue, max: self.maxEvValue), forKey: kCIInputEVKey)
         return self
     }
     

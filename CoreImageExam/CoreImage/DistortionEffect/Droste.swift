@@ -45,17 +45,17 @@ final class Droste: Rotation {
     }
     
     func strands(strands: Float) -> Droste {
-        self.filter.setValue(NSNumber.convertFloat(strands, min: self.minStrands, max: self.maxStrands), forKey: "inputStrands")
+        self.filter.setValue(NSNumber.floatNumber(strands, min: self.minStrands, max: self.maxStrands), forKey: "inputStrands")
         return self
     }
     
     func periodicity(periodicity: Float) -> Droste {
-        self.filter.setValue(NSNumber.convertFloat(periodicity, min: self.minPeriodicity, max: self.maxPeriodicity), forKey: "inputPeriodicity")
+        self.filter.setValue(NSNumber.floatNumber(periodicity, min: self.minPeriodicity, max: self.maxPeriodicity), forKey: "inputPeriodicity")
         return self
     }
     
     func zoom(zoom: Float) -> Droste {
-        self.filter.setValue(NSNumber.convertFloat(zoom, min: self.minZoom, max: self.maxZoom), forKey: "inputZoom")
+        self.filter.setValue(NSNumber.floatNumber(zoom, min: self.minZoom, max: self.maxZoom), forKey: "inputZoom")
         return self
     }
     

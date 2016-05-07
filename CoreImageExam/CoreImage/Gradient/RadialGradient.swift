@@ -27,12 +27,12 @@ final class RadialGradient: Center, GradientColor {
     }
     
     func radius0(radius: Float) -> RadialGradient {
-        self.filter.setValue(NSNumber.convertFloat(radius, min: minRadius0Value, max: maxRadius0Value), forKey: "inputRadius0")
+        self.filter.setValue(NSNumber.floatNumber(radius, min: minRadius0Value, max: maxRadius0Value), forKey: "inputRadius0")
         return self
     }
     
     func radius1(radius: Float) -> RadialGradient {
-        self.filter.setValue(NSNumber.convertFloat(radius, min: minRadius1Value, max: maxRadius1Value), forKey: "inputRadius1")
+        self.filter.setValue(NSNumber.floatNumber(radius, min: minRadius1Value, max: maxRadius1Value), forKey: "inputRadius1")
         return self
     }
     

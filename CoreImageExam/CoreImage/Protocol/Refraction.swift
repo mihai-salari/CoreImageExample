@@ -26,7 +26,7 @@ extension Refraction {
     }
     
     func refraction(refraction: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(refraction, min: self.minRefractionValue, max: self.maxRefractionValue), forKey: kCIInputRefractionKey)
+        self.filter.setValue(NSNumber.floatNumber(refraction, min: self.minRefractionValue, max: self.maxRefractionValue), forKey: kCIInputRefractionKey)
         return self
     }
     

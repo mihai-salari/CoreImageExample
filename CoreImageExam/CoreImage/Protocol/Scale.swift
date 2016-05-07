@@ -26,7 +26,7 @@ extension Scale {
     }
     
     func scale(scale: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(scale, min: self.minScaleValue, max: self.maxScaleValue), forKey: kCIInputScaleKey)
+        self.filter.setValue(NSNumber.floatNumber(scale, min: self.minScaleValue, max: self.maxScaleValue), forKey: kCIInputScaleKey)
         return self
     }
     

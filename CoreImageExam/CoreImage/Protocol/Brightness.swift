@@ -26,7 +26,7 @@ extension Brightness {
     }
     
     func brightness(brightness: Float) -> Self {
-        self.filter.setValue(NSNumber.convertFloat(brightness, min: self.minBrightnessValue, max: self.maxBrightnessValue), forKey: kCIInputBrightnessKey)
+        self.filter.setValue(NSNumber.floatNumber(brightness, min: self.minBrightnessValue, max: self.maxBrightnessValue), forKey: kCIInputBrightnessKey)
         return self
     }
     
