@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol NoiseLevel: ImageProcessable {
+protocol NoiseLevel: Processable {
     
     var minNoise: Double { get }
     var maxNoise: Double { get }

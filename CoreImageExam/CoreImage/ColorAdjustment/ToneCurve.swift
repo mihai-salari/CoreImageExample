@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class ToneCurve: ImageProcessable {
+final class ToneCurve: Processable {
     
     let filter = CIFilter(name: "CIToneCurve")!
     

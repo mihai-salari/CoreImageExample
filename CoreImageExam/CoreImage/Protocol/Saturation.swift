@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Saturation: ImageProcessable {
+protocol Saturation: Processable {
     
     var minSaturation: Double { get }
     var maxSaturation: Double { get }

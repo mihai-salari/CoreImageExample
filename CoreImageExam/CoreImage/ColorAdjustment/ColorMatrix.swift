@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class ColorMatrix: ImageProcessable {
+final class ColorMatrix: Processable {
     
     let filter = CIFilter(name: "CIColorMatrix")!
     

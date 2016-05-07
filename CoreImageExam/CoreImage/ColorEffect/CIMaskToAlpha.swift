@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class CIMaskToAlpha: ImageProcessable {
+final class CIMaskToAlpha: Processable {
     
     let filter = CIFilter(name: "CIMaskToAlpha")!
     

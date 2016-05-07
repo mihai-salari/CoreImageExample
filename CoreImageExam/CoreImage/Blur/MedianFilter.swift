@@ -7,7 +7,7 @@ import Foundation
 import CoreImage
 
 // TODO: iOS9
-final class MedianFilter: ImageProcessable {
+final class MedianFilter: Processable {
     
     let filter: CIFilter = CIFilter(name: "CIMedianFilter")!
     

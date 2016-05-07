@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class CIGammaAdjust: ImageProcessable {
+final class CIGammaAdjust: Processable {
     
     let filter = CIFilter(name: "CIGammaAdjust")!
     let minPower = 0.25

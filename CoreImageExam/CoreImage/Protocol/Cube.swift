@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Cube: ImageProcessable {
+protocol Cube: Processable {
     
     var minDimension: Double { get }
     var maxDimension: Double { get }

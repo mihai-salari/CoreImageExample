@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class MinimumComponent: ImageProcessable {
+final class MinimumComponent: Processable {
     
     let filter = CIFilter(name: "CIMinimumComponent")!
     

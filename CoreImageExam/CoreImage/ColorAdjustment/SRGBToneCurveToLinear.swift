@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class SRGBToneCurveToLinear: ImageProcessable {
+final class SRGBToneCurveToLinear: Processable {
     
     let filter = CIFilter(name: "CISRGBToneCurveToLinear")!
     

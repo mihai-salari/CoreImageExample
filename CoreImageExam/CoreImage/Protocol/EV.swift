@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol EV: ImageProcessable {
+protocol EV: Processable {
     
     var minEV: Double { get }
     var maxEV: Double { get }

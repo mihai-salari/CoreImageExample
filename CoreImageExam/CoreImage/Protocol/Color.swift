@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Color: ImageProcessable {
+protocol Color: Processable {
     
     func color(color: CIColor) -> Self
     

@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Angle: ImageProcessable {
+protocol Angle: Processable {
     
     var minAngle: Double { get }
     var maxAngle: Double { get }

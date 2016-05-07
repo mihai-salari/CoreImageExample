@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class ColorInvert: ImageProcessable {
+final class ColorInvert: Processable {
     
     let filter = CIFilter(name: "CIColorInvert")!
     

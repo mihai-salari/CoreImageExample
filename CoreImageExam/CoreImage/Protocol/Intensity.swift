@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Intensity: ImageProcessable {
+protocol Intensity: Processable {
     
     var minIntensity: Double { get }
     var maxIntensity: Double { get }

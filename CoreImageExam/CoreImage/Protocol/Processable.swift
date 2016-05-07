@@ -7,18 +7,29 @@ import Foundation
 import UIKit
 import CoreImage
 
-public protocol ImageProcessable {
+public protocol Processable {
     
     var filter: CIFilter { get }
+    var attributes: [String: AnyObject] { get }
     
     func input(image: UIImage) -> Self
-    func outputCIImage() -> CIImage 
+    
+    func outputCIImage() -> CIImage
     func outputCGImage() -> CGImage
     func outputUIImage() -> UIImage
-    func composite(processable: ImageProcessable) -> ImageProcessable  
+    
+    // TODO: Rename
+    func composite(processable: Processable) -> Self
+    
 }
 
-extension ImageProcessable {
+extension Processable {
+    
+    var attributes: [String: AnyObject] {
+        get {
+            return self.filter.attributes
+        }
+    }
     
     // MARK: - Input
     
@@ -59,8 +70,9 @@ extension ImageProcessable {
     
     // MARK: -
     
-    func composite(processable: ImageProcessable) -> ImageProcessable {
+    func composite(processable: Processable) -> Self {
         self.filter.setValue(processable.outputCIImage(), forKey: kCIInputImageKey)
         return self
     }
+    
 }

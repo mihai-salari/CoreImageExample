@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class ColorPosterize: ImageProcessable {
+final class ColorPosterize: Processable {
     
     let filter = CIFilter(name: "CIColorPosterize")!
     let minLevels = 2.0 // 1?

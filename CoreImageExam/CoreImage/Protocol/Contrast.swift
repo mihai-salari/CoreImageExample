@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Contrast: ImageProcessable {
+protocol Contrast: Processable {
     
     var minContrast: Double { get }
     var maxContrast: Double { get }

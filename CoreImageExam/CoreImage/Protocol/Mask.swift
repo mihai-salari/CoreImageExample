@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Mask: ImageProcessable {
+protocol Mask: Processable {
     
     func mask(image: CIImage) -> Self
     

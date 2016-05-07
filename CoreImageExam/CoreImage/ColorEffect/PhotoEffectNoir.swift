@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class PhotoEffectNoir: ImageProcessable {
+final class PhotoEffectNoir: Processable {
     
     let filter = CIFilter(name: "CIPhotoEffectNoir")!
     

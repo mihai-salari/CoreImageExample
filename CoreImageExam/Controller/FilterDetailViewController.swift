@@ -120,7 +120,7 @@ class FilterDetailViewController: UIViewController, UITableViewDelegate, UITable
         case 2:
             let attributeCell = cell as! FilterAttributeCell
             let lazyMapCollection = self.attributes!.keys
-            let keys: [String] = lazyMapCollection.map { String($0) }.sort { $0 < $1 }
+            let keys = lazyMapCollection.map { String($0) }.sort { $0 < $1 }
             
             attributeCell.attributeNameLabel.text = keys[row]
             if let value = self.attributes![keys[row]] {
@@ -149,7 +149,7 @@ class FilterDetailViewController: UIViewController, UITableViewDelegate, UITable
     
         let row = indexPath.row
         let lazyMapCollection = self.attributes!.keys
-        let keys: [String] = lazyMapCollection.map { String($0) }.sort { $0 < $1 }
+        let keys = lazyMapCollection.map { String($0) }.sort { $0 < $1 }
         
         let documentKey = keys[row]
         if documentKey == "CIAttributeReferenceDocumentation" {

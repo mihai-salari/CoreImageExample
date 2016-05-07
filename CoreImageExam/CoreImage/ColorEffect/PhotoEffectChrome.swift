@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class PhotoEffectChrome: ImageProcessable {
+final class PhotoEffectChrome: Processable {
     
     let filter = CIFilter(name: "CIPhotoEffectChrome")!
     

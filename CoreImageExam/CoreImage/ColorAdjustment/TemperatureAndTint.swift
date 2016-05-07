@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class TemperatureAndTint: ImageProcessable {
+final class TemperatureAndTint: Processable {
     
     let filter = CIFilter(name: "CITemperatureAndTint")!
     

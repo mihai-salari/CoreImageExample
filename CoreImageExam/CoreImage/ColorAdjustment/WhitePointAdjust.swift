@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class WhitePointAdjust: ImageProcessable {
+final class WhitePointAdjust: Processable {
     
     let filter = CIFilter(name: "CIWhitePointAdjust")!
     

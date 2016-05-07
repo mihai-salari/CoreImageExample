@@ -8,7 +8,7 @@ import UIKit
 import CoreGraphics
 import CoreImage
 
-protocol BackgroundImage: ImageProcessable {
+protocol BackgroundImage: Processable {
     
     func backgroundImage(image: UIImage) -> Self
     func backgroundImage(image: CGImage) -> Self

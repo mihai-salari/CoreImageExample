@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class ColorClamp: ImageProcessable {
+final class ColorClamp: Processable {
     
     let filter = CIFilter(name: "CIColorClamp")!
     

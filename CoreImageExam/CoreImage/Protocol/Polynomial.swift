@@ -7,7 +7,7 @@ import Foundation
 import CoreGraphics
 import CoreImage
 
-protocol Polynomial: ImageProcessable {
+protocol Polynomial: Processable {
     
     func redCoefficients(x: CGFloat, y: CGFloat, z: CGFloat, w: CGFloat) -> Self
     func greenCoefficients(x: CGFloat, y: CGFloat, z: CGFloat, w: CGFloat) -> Self

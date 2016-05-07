@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Brightness: ImageProcessable {
+protocol Brightness: Processable {
     
     var minBrightness: Double { get }
     var maxBrightness: Double { get }

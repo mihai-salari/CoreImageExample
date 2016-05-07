@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class PhotoEffectTonal: ImageProcessable {
+final class PhotoEffectTonal: Processable {
     
     let filter = CIFilter(name: "CIPhotoEffectTonal")!
     

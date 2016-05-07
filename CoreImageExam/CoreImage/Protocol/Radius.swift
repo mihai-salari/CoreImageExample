@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Radius: ImageProcessable {
+protocol Radius: Processable {
     
     var minRadius: Double { get }
     var maxRadius: Double { get }

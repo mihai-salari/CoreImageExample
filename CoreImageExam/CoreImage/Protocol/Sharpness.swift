@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Sharpness: ImageProcessable {
+protocol Sharpness: Processable {
     
     var minSharpness: Double { get }
     var maxSharpness: Double { get }

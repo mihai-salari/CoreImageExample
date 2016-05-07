@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class FalseColor: ImageProcessable {
+final class FalseColor: Processable {
     
     let filter = CIFilter(name: "CIFalseColor")!
     

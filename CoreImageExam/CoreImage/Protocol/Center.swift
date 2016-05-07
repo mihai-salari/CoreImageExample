@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Center: ImageProcessable {
+protocol Center: Processable {
     
     func center(x x: CGFloat, y: CGFloat) -> Self
     

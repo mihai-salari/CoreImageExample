@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-final class MaximumComponent: ImageProcessable {
+final class MaximumComponent: Processable {
     
     let filter = CIFilter(name: "CIMaximumComponent")!
     

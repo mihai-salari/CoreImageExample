@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol GradientImage: ImageProcessable {
+protocol GradientImage: Processable {
     
     func gradientImage(image: CIImage) -> Self
     

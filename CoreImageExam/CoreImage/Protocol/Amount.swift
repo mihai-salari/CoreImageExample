@@ -6,7 +6,7 @@
 import Foundation
 import CoreImage
 
-protocol Amount: ImageProcessable {
+protocol Amount: Processable {
     
     var minAmount: Double { get }
     var maxAmount: Double { get }
