@@ -10,9 +10,5 @@ import CoreImage
 final class NoiseReduction: NoiseLevel, Sharpness {
     
     let filter = CIFilter(name: "CINoiseReduction")!
-    let minNoise = 0.0
-    let maxNoise = 0.1
-    let minSharpness = 0.0
-    let maxSharpness = 2.0
     
 }

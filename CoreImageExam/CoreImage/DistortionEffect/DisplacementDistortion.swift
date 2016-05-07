@@ -11,8 +11,6 @@ import CoreImage
 final class DisplacementDistortion: Scale {
     
     let filter = CIFilter(name: "CIDisplacementDistortion")!
-    let minScale = 0.0
-    let maxScale = 200.0
     
     func displacementImage(image: UIImage) -> DisplacementDistortion {
         guard let cgImage = image.CGImage else {

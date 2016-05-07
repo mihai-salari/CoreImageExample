@@ -9,7 +9,5 @@ import CoreImage
 final class HoleDistortion: Center, Radius {
     
     let filter = CIFilter(name: "CIHoleDistortion")!
-    let minRadius = 0.01
-    let maxRadius = 1000.0
     
 }

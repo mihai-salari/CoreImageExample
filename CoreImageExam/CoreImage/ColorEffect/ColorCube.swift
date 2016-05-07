@@ -9,7 +9,5 @@ import CoreImage
 final class ColorCube: Cube {
     
     let filter = CIFilter(name: "CIColorCube")!
-    let minDimension = 2.0
-    let maxDimension = 64.0
     
 }

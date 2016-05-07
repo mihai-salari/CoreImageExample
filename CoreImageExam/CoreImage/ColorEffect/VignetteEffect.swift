@@ -9,16 +9,17 @@ import CoreImage
 final class VignetteEffect: Center, Radius, Intensity {
 
     let filter = CIFilter(name: "CIVignetteEffect")!
-    let minRadius = 0.0
-    let maxRadius = 2000.0
-    let minIntensity = -1.0
-    let maxIntensity = 1.0
     
-    let minFallOff: Double = 0.0
-    let maxFallOff: Double = 1.0
+    var minFallOffValue: Float {
+        return self.minValue(inputKey: "inputFallOff")
+    }
     
-    func fallOff(fallOff: Double) -> VignetteEffect {
-        self.filter.setValue(NSNumber.convertDouble(fallOff, min: minFallOff, max: maxFallOff), forKey: "inputFallOff")
+    var maxFallOffValue: Float {
+        return self.maxValue(inputKey: "inputFallOff")
+    }
+    
+    func fallOff(fallOff: Float) -> VignetteEffect {
+        self.filter.setValue(NSNumber.convertFloat(fallOff, min: self.minFallOffValue, max: self.maxFallOffValue), forKey: "inputFallOff")
         return self
     }
     

@@ -7,12 +7,8 @@ import Foundation
 
 extension NSNumber {
     
-    static func convertInt(int: Int, min: Int, max: Int) -> NSNumber {
-        return NSNumber(long: self.convert(int, min: min, max: max))
-    }
-    
-    static func convertDouble(double: Double, min: Double, max: Double) -> NSNumber {
-        return NSNumber(double: self.convert(double, min: min, max: max))
+    static func convertFloat(float: Float, min: Float, max: Float) -> NSNumber {
+        return NSNumber(float: self.convert(float, min: min, max: max))
     }
     
     static func convert<T: Comparable>(target: T, min: T, max: T) -> T {

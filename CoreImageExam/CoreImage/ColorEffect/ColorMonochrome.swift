@@ -9,7 +9,5 @@ import CoreImage
 final class ColorMonochrome: Color, Intensity {
     
     let filter = CIFilter(name: "CIColorMonochrome")!
-    let minIntensity = 0.0
-    let maxIntensity = 1.0
     
 }

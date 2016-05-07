@@ -8,17 +8,25 @@ import CoreImage
 
 protocol Rotation: Processable {
     
-    var minRotation: Double { get }
-    var maxRotation: Double { get }
+    var minRotationValue: Float { get }
+    var maxRotationValue: Float { get }
     
-    func rotation(rotation: Double) -> Self
+    func rotation(rotation: Float) -> Self
     
 }
 
 extension Rotation {
     
-    func rotation(rotation: Double) -> Self {
-        self.filter.setValue(NSNumber.convertDouble(rotation, min: minRotation, max: maxRotation), forKey: "inputRotation")
+    var minRotationValue: Float {
+        return self.minValue(inputKey: "inputRotation")
+    }
+    
+    var maxRotationValue: Float {
+        return self.maxValue(inputKey: "inputRotation")
+    }
+    
+    func rotation(rotation: Float) -> Self {
+        self.filter.setValue(NSNumber.convertFloat(rotation, min: self.minRotationValue, max: self.maxRotationValue), forKey: "inputRotation")
         return self
     }
     

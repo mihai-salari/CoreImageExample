@@ -32,7 +32,7 @@ class TestViewController: UIViewController {
         }
         
         let boxBlur = BoxBlur()
-        self.imageView.image = boxBlur.input(image).radius(50).outputUIImage()
+        self.imageView.image = boxBlur.input(image).radius(30).outputUIImage()
         
 //        let sepiaColor = CIColor(red: 0.76, green: 0.65, blue: 0.54)
 //        let monochromeFilter = CIFilter(name: "CIColorMonochrome",

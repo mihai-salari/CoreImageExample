@@ -8,17 +8,25 @@ import CoreImage
 
 protocol Saturation: Processable {
     
-    var minSaturation: Double { get }
-    var maxSaturation: Double { get }
+    var minSaturationValue: Float { get }
+    var maxSaturationValue: Float { get }
     
-    func saturation(saturation: Double) -> Self
+    func saturation(saturation: Float) -> Self
     
 }
 
 extension Saturation {
     
-    func saturation(saturation: Double) -> Self {
-        self.filter.setValue(NSNumber.convertDouble(saturation, min: minSaturation, max: maxSaturation), forKey: kCIInputSaturationKey)
+    var minSaturationValue: Float {
+        return self.minValue(inputKey: kCIInputSaturationKey)
+    }
+    
+    var maxSaturationValue: Float {
+        return self.maxValue(inputKey: kCIInputSaturationKey)
+    }
+    
+    func saturation(saturation: Float) -> Self {
+        self.filter.setValue(NSNumber.convertFloat(saturation, min: self.minSaturationValue, max: self.maxSaturationValue), forKey: kCIInputSaturationKey)
         return self
     }
     

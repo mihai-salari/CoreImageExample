@@ -9,9 +9,5 @@ import CoreImage
 final class MotionBlur: Angle, Radius {
     
     let filter = CIFilter(name: "CIMotionBlur")!
-    let minAngle = -M_PI
-    let maxAngle = M_PI
-    let minRadius = 0.0
-    let maxRadius = 100.0
     
 }

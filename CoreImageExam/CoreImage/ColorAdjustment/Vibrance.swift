@@ -9,7 +9,5 @@ import CoreImage
 final class Vibrance: Amount {
     
     let filter = CIFilter(name: "CIVibrance")!
-    let minAmount = -1.0
-    let maxAmount = 1.0
     
 }

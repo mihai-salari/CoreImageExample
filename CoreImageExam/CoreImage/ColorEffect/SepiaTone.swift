@@ -9,7 +9,5 @@ import CoreImage
 final class SepiaTone: Intensity {
     
     let filter = CIFilter(name: "CISepiaTone")!
-    let minIntensity = 0.0
-    let maxIntensity = 1.0
     
 }

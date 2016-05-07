@@ -9,14 +9,30 @@ import CoreImage
 final class Droste: Rotation {
     
     let filter = CIFilter(name: "CIDroste")!
-    let minStrands = -10.0
-    let maxStrands = 10.0
-    let minPeriodicity = 1.0
-    let maxPeriodicity = 5.0
-    let minRotation = 0.0
-    let maxRotation = M_PI * 2
-    let minZoom = 0.01
-    let maxZoom = 5.0
+    
+    var minStrands: Float {
+        return self.minValue(inputKey: "inputStrands")
+    }
+    
+    var maxStrands: Float {
+        return self.maxValue(inputKey: "inputStrands")
+    }
+    
+    var minPeriodicity: Float {
+        return self.minValue(inputKey: "inputPeriodicity")
+    }
+    
+    var maxPeriodicity: Float {
+        return self.maxValue(inputKey: "inputPeriodicity")
+    }
+    
+    var minZoom: Float {
+        return self.minValue(inputKey: "inputZoom")
+    }
+    
+    var maxZoom: Float {
+        return self.maxValue(inputKey: "inputZoom")
+    }
 
     func insetPoint0(x: CGFloat, y: CGFloat) -> Droste {
         self.filter.setValue(CIVector(x: x, y: y), forKey: "inputInsetPoint0")
@@ -28,18 +44,18 @@ final class Droste: Rotation {
         return self
     }
     
-    func strands(strands: Double) -> Droste {
-        self.filter.setValue(NSNumber.convertDouble(strands, min: minStrands, max: maxStrands), forKey: "inputStrands")
+    func strands(strands: Float) -> Droste {
+        self.filter.setValue(NSNumber.convertFloat(strands, min: self.minStrands, max: self.maxStrands), forKey: "inputStrands")
         return self
     }
     
-    func periodicity(periodicity: Double) -> Droste {
-        self.filter.setValue(NSNumber.convertDouble(periodicity, min: minPeriodicity, max: maxPeriodicity), forKey: "inputPeriodicity")
+    func periodicity(periodicity: Float) -> Droste {
+        self.filter.setValue(NSNumber.convertFloat(periodicity, min: self.minPeriodicity, max: self.maxPeriodicity), forKey: "inputPeriodicity")
         return self
     }
     
-    func zoom(zoom: Double) -> Droste {
-        self.filter.setValue(NSNumber.convertDouble(zoom, min: minZoom, max: maxZoom), forKey: "inputZoom")
+    func zoom(zoom: Float) -> Droste {
+        self.filter.setValue(NSNumber.convertFloat(zoom, min: self.minZoom, max: self.maxZoom), forKey: "inputZoom")
         return self
     }
     

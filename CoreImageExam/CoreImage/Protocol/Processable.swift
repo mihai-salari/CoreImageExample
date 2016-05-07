@@ -13,13 +13,13 @@ public protocol Processable {
     var attributes: [String: AnyObject] { get }
     
     func input(image: UIImage) -> Self
-    
+    func composite(processable: Processable) -> Self // TODO: Rename
     func outputCIImage() -> CIImage
     func outputCGImage() -> CGImage
     func outputUIImage() -> UIImage
-    
-    // TODO: Rename
-    func composite(processable: Processable) -> Self
+    func inputDetailes(key: String) -> NSDictionary
+    func minValue(inputKey key: String) -> Float
+    func maxValue(inputKey key: String) -> Float
     
 }
 
@@ -39,6 +39,11 @@ extension Processable {
         }
         self.filter.setValue(ciImage, forKey: kCIInputImageKey)
         
+        return self
+    }
+    
+    func composite(processable: Processable) -> Self {
+        self.filter.setValue(processable.outputCIImage(), forKey: kCIInputImageKey)
         return self
     }
     
@@ -70,9 +75,38 @@ extension Processable {
     
     // MARK: -
     
-    func composite(processable: Processable) -> Self {
-        self.filter.setValue(processable.outputCIImage(), forKey: kCIInputImageKey)
-        return self
+    func inputDetailes(key: String) -> NSDictionary {
+        return self.attributes[key] as! NSDictionary
+    }
+    
+    func minValue(inputKey key: String) -> Float {
+        let detailes = self.inputDetailes(key)
+        if let min = detailes[kCIAttributeMin] as? NSNumber {
+            print("min value:\(min.floatValue), forKey\(key)")
+            return min.floatValue
+        }
+    
+        if let min = detailes[kCIAttributeSliderMin] as? NSNumber {
+            print("min value:\(min.floatValue), forKey\(key)")
+            return min.floatValue
+        }
+    
+        return 0.0
+    }
+    
+    func maxValue(inputKey key: String) -> Float {
+        let detailes = self.inputDetailes(key)
+        if let max = detailes[kCIAttributeMax] as? NSNumber {
+            print("max value:\(max.floatValue), forKey\(key)")
+            return max.floatValue
+        }
+    
+        if let max = detailes[kCIAttributeSliderMax] as? NSNumber {
+            print("max value:\(max.floatValue), forKey\(key)")
+            return max.floatValue
+        }
+    
+        return 0.0
     }
     
 }

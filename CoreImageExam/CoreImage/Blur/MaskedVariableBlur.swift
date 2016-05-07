@@ -10,7 +10,5 @@ import CoreImage
 final class MaskedVariableBlur: Mask {
     
     let filter = CIFilter(name: "CIMaskedVariableBlur")!
-    let minRadius = 0
-    let maxRadius = 5
     
 }

@@ -7,7 +7,7 @@ import Foundation
 import CoreImage
 
 final class StretchCrop: Processable {
-    
+    // TODO:
     let filter = CIFilter(name: "CIStretchCrop")!
     
     func size() -> StretchCrop {

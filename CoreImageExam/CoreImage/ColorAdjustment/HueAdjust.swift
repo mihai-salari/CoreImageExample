@@ -9,7 +9,5 @@ import CoreImage
 final class HueAdjust: Angle {
     
     let filter = CIFilter(name: "CIHueAdjust")!
-    let minAngle = -M_PI
-    let maxAngle = M_PI
     
 }

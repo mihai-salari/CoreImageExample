@@ -8,17 +8,25 @@ import CoreImage
 
 protocol Sharpness: Processable {
     
-    var minSharpness: Double { get }
-    var maxSharpness: Double { get }
+    var minSharpnessValue: Float { get }
+    var maxSharpnessValue: Float { get }
     
-    func sharpness(sharpness: Double) -> Self
+    func sharpness(sharpness: Float) -> Self
     
 }
 
 extension Sharpness {
     
-    func sharpness(sharpness: Double) -> Self {
-        self.filter.setValue(NSNumber.convertDouble(sharpness, min: minSharpness, max: maxSharpness), forKey: kCIInputSharpnessKey)
+    var minSharpnessValue: Float {
+        return self.minValue(inputKey: kCIInputSharpnessKey)
+    }
+    
+    var maxSharpnessValue: Float {
+        return self.maxValue(inputKey: kCIInputSharpnessKey)
+    }
+    
+    func sharpness(sharpness: Float) -> Self {
+        self.filter.setValue(NSNumber.convertFloat(sharpness, min: self.minSharpnessValue, max: self.maxSharpnessValue), forKey: kCIInputSharpnessKey)
         return self;
     }
     

@@ -8,17 +8,25 @@ import CoreImage
 
 protocol Intensity: Processable {
     
-    var minIntensity: Double { get }
-    var maxIntensity: Double { get }
+    var minIntensityValue: Float { get }
+    var maxIntensityValue: Float { get }
     
-    func intensity(intensity: Double) -> Self
+    func intensity(intensity: Float) -> Self
     
 }
 
 extension Intensity {
     
-    func intensity(intensity: Double) -> Self {
-        self.filter.setValue(NSNumber.convertDouble(intensity, min: minIntensity, max: maxIntensity), forKey: kCIInputIntensityKey)
+    var minIntensityValue: Float {
+        return self.minValue(inputKey: kCIInputIntensityKey)
+    }
+    
+    var maxIntensityValue: Float {
+        return self.maxValue(inputKey: kCIInputIntensityKey)
+    }
+    
+    func intensity(intensity: Float) -> Self {
+        self.filter.setValue(NSNumber.convertFloat(intensity, min: self.minIntensityValue, max: self.maxIntensityValue), forKey: kCIInputIntensityKey)
         return self
     }
     

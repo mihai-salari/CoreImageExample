@@ -9,7 +9,5 @@ import CoreImage
 final class ZoomBlur: Center, Amount {
     
     let filter = CIFilter(name: "CIZoomBlur")!
-    let minAmount = 0.0
-    let maxAmount = 200.0
     
 }

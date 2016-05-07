@@ -9,9 +9,5 @@ import CoreImage
 final class CircularWrap: Angle, Center, Radius {
     
     let filter = CIFilter(name: "CICircularWrap")!
-    let minAngle = -M_PI
-    let maxAngle = M_PI
-    let minRadius = 0.0
-    let maxRadius = 600.0
     
 }

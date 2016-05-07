@@ -11,7 +11,5 @@ import CoreImage
 final class DiscBlur: Radius {
     
     let filter = CIFilter(name: "CIDiscBlur")!
-    let minRadius = 0.0
-    let maxRadius = 100.0
     
 }

@@ -9,7 +9,5 @@ import CoreImage
 final class CircleSplashDistortion: Center, Radius {
     
     let filter = CIFilter(name: "CICircleSplashDistortion")!
-    let minRadius = 0.0
-    let maxRadius = 1000.0
     
 }

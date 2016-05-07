@@ -11,8 +11,6 @@ import CoreImage
 final class GlassDistortion: Center, Scale {
     
     let filter = CIFilter(name: "CIGlassDistortion")!
-    let minScale = 0.01
-    let maxScale = 500.0
     
     func texture(image: UIImage) -> GlassDistortion {
         guard let cgImage = image.CGImage else {

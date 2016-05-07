@@ -8,17 +8,25 @@ import CoreImage
 
 protocol Refraction: Processable {
     
-    var minRefraction: Double { get }
-    var maxRefraction: Double { get }
+    var minRefractionValue: Float { get }
+    var maxRefractionValue: Float { get }
     
-    func refraction(refraction: Double) -> Self
+    func refraction(refraction: Float) -> Self
     
 }
 
 extension Refraction {
     
-    func refraction(refraction: Double) -> Self {
-        self.filter.setValue(NSNumber.convertDouble(refraction, min: minRefraction, max: maxRefraction), forKey: kCIInputRefractionKey)
+    var minRefractionValue: Float {
+        return self.minValue(inputKey: kCIInputRefractionKey)
+    }
+    
+    var maxRefractionValue: Float {
+        return self.maxValue(inputKey: kCIInputRefractionKey)
+    }
+    
+    func refraction(refraction: Float) -> Self {
+        self.filter.setValue(NSNumber.convertFloat(refraction, min: self.minRefractionValue, max: self.maxRefractionValue), forKey: kCIInputRefractionKey)
         return self
     }
     

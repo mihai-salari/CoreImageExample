@@ -9,7 +9,5 @@ import CoreImage
 final class ExposureAdjust: EV {
     
     let filter = CIFilter(name: "CIExposureAdjust")!
-    let minEV = -10.0
-    let maxEV = 10.0
     
 }
