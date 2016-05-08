@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 import CoreImage
 
-final class MaskedVariableBlur: Mask {
+final class MaskedVariableBlur: MaskImage {
     
     let filter = CIFilter(name: "CIMaskedVariableBlur")!
     

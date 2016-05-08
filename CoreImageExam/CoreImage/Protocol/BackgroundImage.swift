@@ -22,8 +22,7 @@ extension BackgroundImage {
             return self
         }
         
-        self.backgroundImage(cgImage)
-        return self
+        return self.backgroundImage(cgImage)
     }
     
     func backgroundImage(image: CGImage) -> Self {

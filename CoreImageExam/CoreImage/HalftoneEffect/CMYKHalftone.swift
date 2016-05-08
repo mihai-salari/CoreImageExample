@@ -27,12 +27,12 @@ final class CMYKHalftone: Angle, Center, Sharpness, Width {
     }
     
     func GCR(gcr: Float) -> CMYKHalftone {
-        self.filter.setValue(NSNumber.floatNumber(gcr, min: minGCRValue, max: maxGCRValue), forKey: "inputGCR")
+        self.filter.setValue(NSNumber.floatNumber(gcr, min: self.minGCRValue, max: self.maxGCRValue), forKey: "inputGCR")
         return self
     }
     
     func UCR(ucr: Float) -> CMYKHalftone {
-        self.filter.setValue(NSNumber.floatNumber(ucr, min: minUCRValue, max: maxGCRValue), forKey: "inputUCR")
+        self.filter.setValue(NSNumber.floatNumber(ucr, min: self.minUCRValue, max: self.maxGCRValue), forKey: "inputUCR")
         return self
     }
     
