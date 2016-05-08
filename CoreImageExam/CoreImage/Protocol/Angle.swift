@@ -8,25 +8,25 @@ import CoreImage
 
 protocol Angle: Processable {
     
-    var minAngleValue: Float { get }
-    var maxAngleValue: Float { get }
+    var minAngleValue: Double { get }
+    var maxAngleValue: Double { get }
     
-    func angle(angle: Float) -> Self
+    func angle(angle: Double) -> Self
     
 }
 
 extension Angle {
     
-    var maxAngleValue: Float {
+    var maxAngleValue: Double {
         return self.minValue(inputKey: kCIInputAngleKey)
     }
     
-    var minAngleValue: Float {
+    var minAngleValue: Double {
         return self.maxValue(inputKey: kCIInputAngleKey)
     }
     
-    func angle(angle: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(angle, min: self.minAngleValue, max: self.maxAngleValue), forKey: kCIInputAngleKey)
+    func angle(angle: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(angle, min: self.minAngleValue, max: self.maxAngleValue), forKey: kCIInputAngleKey)
         return self
     }
     

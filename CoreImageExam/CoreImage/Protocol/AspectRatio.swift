@@ -8,25 +8,25 @@ import CoreImage
 
 protocol AspectRatio: Processable {
     
-    var minRationValue: Float { get }
-    var maxRationValue: Float { get }
+    var minRationValue: Double { get }
+    var maxRationValue: Double { get }
     
-    func aspectRatio(ratio: Float) -> Self
+    func aspectRatio(ratio: Double) -> Self
     
 }
 
 extension AspectRatio {
     
-    var minRationValue: Float {
+    var minRationValue: Double {
         return self.minValue(inputKey: kCIInputAspectRatioKey)
     }
     
-    var maxRationValue: Float {
+    var maxRationValue: Double {
         return self.maxValue(inputKey: kCIInputAspectRatioKey)
     }
     
-    func aspectRatio(ratio: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(ratio, min: self.minRationValue, max:self.maxRationValue), forKey: kCIInputAspectRatioKey)
+    func aspectRatio(ratio: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(ratio, min: self.minRationValue, max:self.maxRationValue), forKey: kCIInputAspectRatioKey)
         return self
     }
     

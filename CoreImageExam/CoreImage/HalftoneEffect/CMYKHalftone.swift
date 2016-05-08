@@ -10,29 +10,29 @@ final class CMYKHalftone: Angle, Center, Sharpness, Width {
     
     let filter = CIFilter(name: "CICMYKHalftone")!
     
-    var minGCRValue: Float {
+    var minGCRValue: Double {
         return self.minValue(inputKey: "inputGCR")
     }
     
-    var maxGCRValue: Float {
+    var maxGCRValue: Double {
         return self.maxValue(inputKey: "inputGCR")
     }
     
-    var minUCRValue: Float {
+    var minUCRValue: Double {
         return self.minValue(inputKey: "inputUCR")
     }
     
-    var maxUCRValue: Float {
+    var maxUCRValue: Double {
         return self.maxValue(inputKey: "inputUCR")
     }
     
-    func GCR(gcr: Float) -> CMYKHalftone {
-        self.filter.setValue(NSNumber.floatNumber(gcr, min: self.minGCRValue, max: self.maxGCRValue), forKey: "inputGCR")
+    func GCR(gcr: Double) -> CMYKHalftone {
+        self.filter.setValue(NSNumber.doubleNumber(gcr, min: self.minGCRValue, max: self.maxGCRValue), forKey: "inputGCR")
         return self
     }
     
-    func UCR(ucr: Float) -> CMYKHalftone {
-        self.filter.setValue(NSNumber.floatNumber(ucr, min: self.minUCRValue, max: self.maxGCRValue), forKey: "inputUCR")
+    func UCR(ucr: Double) -> CMYKHalftone {
+        self.filter.setValue(NSNumber.doubleNumber(ucr, min: self.minUCRValue, max: self.maxGCRValue), forKey: "inputUCR")
         return self
     }
     

@@ -8,21 +8,21 @@ import CoreImage
 
 protocol Cube: Processable {
     
-    var minDimensionValue: Float { get }
-    var maxDimensionValue: Float { get }
+    var minDimensionValue: Double { get }
+    var maxDimensionValue: Double { get }
     
     func cubeData(data: NSData) -> Self
-    func cubeDimension(dimension: Float) -> Self
+    func cubeDimension(dimension: Double) -> Self
     
 }
 
 extension Cube {
     
-    var minDimensionValue: Float {
+    var minDimensionValue: Double {
         return self.minValue(inputKey: "inputCubeDimension")
     }
     
-    var maxDimensionValue: Float {
+    var maxDimensionValue: Double {
         return self.maxValue(inputKey: "inputCubeDimension")
     }
     
@@ -31,8 +31,8 @@ extension Cube {
         return self;
     }
     
-    func cubeDimension(dimension: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(dimension, min: self.minDimensionValue, max: self.maxDimensionValue), forKey: "inputCubeDimension")
+    func cubeDimension(dimension: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(dimension, min: self.minDimensionValue, max: self.maxDimensionValue), forKey: "inputCubeDimension")
         return self
     }
     

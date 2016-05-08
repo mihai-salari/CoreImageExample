@@ -8,25 +8,25 @@ import CoreImage
 
 protocol Amount: Processable {
     
-    var minAmountValue: Float { get }
-    var maxAmountValue: Float { get }
+    var minAmountValue: Double { get }
+    var maxAmountValue: Double { get }
     
-    func amount(amount: Float) -> Self
+    func amount(amount: Double) -> Self
     
 }
 
 extension Amount {
     
-    var minAmountValue: Float {
+    var minAmountValue: Double {
         return self.minValue(inputKey: "inputAmount")
     }
     
-    var maxAmountValue: Float {
+    var maxAmountValue: Double {
         return self.maxValue(inputKey: "inputAmount")
     }
     
-    func amount(amount: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(amount, min: self.minAmountValue, max: self.maxAmountValue), forKey: "inputAmount")
+    func amount(amount: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(amount, min: self.minAmountValue, max: self.maxAmountValue), forKey: "inputAmount")
         return self
     }
     

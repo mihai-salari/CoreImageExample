@@ -8,25 +8,25 @@ import CoreImage
 
 protocol NoiseLevel: Processable {
     
-    var minNoiseValue: Float { get }
-    var maxNoiseValue: Float { get }
+    var minNoiseValue: Double { get }
+    var maxNoiseValue: Double { get }
     
-    func noise(noise: Float) -> Self
+    func noise(noise: Double) -> Self
     
 }
 
 extension NoiseLevel {
     
-    var minNoiseValue: Float {
+    var minNoiseValue: Double {
         return self.minValue(inputKey: "inputNoiseLevel")
     }
     
-    var maxNoiseValue: Float {
+    var maxNoiseValue: Double {
         return self.maxValue(inputKey: "inputNoiseLevel")
     }
     
-    func noise(noise: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(noise, min: self.minNoiseValue, max: self.maxNoiseValue), forKey: "inputNoiseLevel")
+    func noise(noise: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(noise, min: self.minNoiseValue, max: self.maxNoiseValue), forKey: "inputNoiseLevel")
         return self
     }
     

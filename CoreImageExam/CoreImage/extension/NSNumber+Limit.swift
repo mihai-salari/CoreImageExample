@@ -7,8 +7,8 @@ import Foundation
 
 extension NSNumber {
     
-    static func floatNumber(float: Float, min: Float, max: Float) -> NSNumber {
-        return NSNumber(float: self.convert(float, min: min, max: max))
+    static func doubleNumber(double: Double, min: Double, max: Double) -> NSNumber {
+        return NSNumber(double: self.convert(double, min: min, max: max))
     }
     
     static func intNumber(int: Int, min: Int, max: Int) -> NSNumber {
@@ -26,4 +26,5 @@ extension NSNumber {
         
         return target
     }
+    
 }

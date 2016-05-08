@@ -10,16 +10,16 @@ final class ColorPosterize: Processable {
     
     let filter = CIFilter(name: "CIColorPosterize")!
     
-    var minLevelsValue: Float {
+    var minLevelsValue: Double {
         return self.minValue(inputKey: "inputLevels")
     }
     
-    var maxLevelsValue: Float {
+    var maxLevelsValue: Double {
         return self.maxValue(inputKey: "inputLevels")
     }
     
-    func levels(levels: Float) -> ColorPosterize {
-        self.filter.setValue(NSNumber.floatNumber(levels, min: self.minLevelsValue, max: self.maxLevelsValue), forKey: "inputLevels")
+    func levels(levels: Double) -> ColorPosterize {
+        self.filter.setValue(NSNumber.doubleNumber(levels, min: self.minLevelsValue, max: self.maxLevelsValue), forKey: "inputLevels")
         return self
     }
     

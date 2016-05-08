@@ -8,25 +8,25 @@ import CoreImage
 
 protocol Bias: Processable {
     
-    var minBiasValue: Float { get }
-    var maxBiasValue: Float { get }
+    var minBiasValue: Double { get }
+    var maxBiasValue: Double { get }
     
-    func bias(bias: Float) -> Self
+    func bias(bias: Double) -> Self
     
 }
 
 extension Bias {
     
-    var minBiasValue: Float {
+    var minBiasValue: Double {
         return self.minValue(inputKey: kCIInputBiasKey)
     }
     
-    var maxBiasValue: Float {
+    var maxBiasValue: Double {
         return self.maxValue(inputKey: kCIInputBiasKey)
     }
     
-    func bias(bias: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(bias, min: self.minBiasValue, max: self.maxBiasValue), forKey: kCIInputBiasKey)
+    func bias(bias: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(bias, min: self.minBiasValue, max: self.maxBiasValue), forKey: kCIInputBiasKey)
         return self
     }
     

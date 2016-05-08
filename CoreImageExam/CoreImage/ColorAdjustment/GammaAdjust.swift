@@ -10,16 +10,16 @@ final class GammaAdjust: Processable {
     
     let filter = CIFilter(name: "GammaAdjust")!
 
-    var minPowerValue: Float {
+    var minPowerValue: Double {
         return self.minValue(inputKey: "inputPower")
     }
     
-    var maxPowerValue: Float {
+    var maxPowerValue: Double {
         return self.maxValue(inputKey: "inputPower")
     }
     
-    func power(power: Float) -> GammaAdjust {
-        self.filter.setValue(NSNumber.floatNumber(power, min: self.minPowerValue, max: self.maxPowerValue), forKey: "inputPower")
+    func power(power: Double) -> GammaAdjust {
+        self.filter.setValue(NSNumber.doubleNumber(power, min: self.minPowerValue, max: self.maxPowerValue), forKey: "inputPower")
         return self
     }
     

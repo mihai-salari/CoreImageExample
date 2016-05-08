@@ -10,42 +10,42 @@ final class HistogramDisplayFilter: Processable {
     
     let filter = CIFilter(name: "CIHistogramDisplayFilter")!
     
-    var minHeightValue: Float { 
+    var minHeightValue: Double { 
         return self.minValue(inputKey: "inputHeight")
     }
     
-    var maxHeightValue: Float {
+    var maxHeightValue: Double {
         return self.maxValue(inputKey: "inputHeight")
     }
     
-    var minHighLimitValue: Float { 
+    var minHighLimitValue: Double { 
         return self.minValue(inputKey: "inputHighLimit")
     }
     
-    var maxHighLimitValue: Float { 
+    var maxHighLimitValue: Double { 
         return self.maxValue(inputKey: "inputHighLimit")
     }
     
-    var minLowLimitValue: Float {
+    var minLowLimitValue: Double {
         return self.minValue(inputKey: "inputLowLimit")
     }
     
-    var maxLowLimitValue: Float { 
+    var maxLowLimitValue: Double { 
         return self.maxValue(inputKey: "inputLowLimit")
     }
     
-    func height(height: Float) -> HistogramDisplayFilter {
-        self.filter.setValue(NSNumber.floatNumber(height, min: self.minHeightValue, max: self.maxHeightValue), forKey: "inputHeight")
+    func height(height: Double) -> HistogramDisplayFilter {
+        self.filter.setValue(NSNumber.doubleNumber(height, min: self.minHeightValue, max: self.maxHeightValue), forKey: "inputHeight")
         return self
     }
     
-    func highLimit(limit: Float) -> HistogramDisplayFilter {
-        self.filter.setValue(NSNumber.floatNumber(limit, min: self.minHighLimitValue, max: self.maxHighLimitValue), forKey: "inputHighLimit")
+    func highLimit(limit: Double) -> HistogramDisplayFilter {
+        self.filter.setValue(NSNumber.doubleNumber(limit, min: self.minHighLimitValue, max: self.maxHighLimitValue), forKey: "inputHighLimit")
         return self
     }
     
-    func lowLimit(limit: Float) -> HistogramDisplayFilter {
-        self.filter.setValue(NSNumber.floatNumber(limit, min: self.minLowLimitValue, max: self.maxLowLimitValue), forKey: "inputLowLimit")
+    func lowLimit(limit: Double) -> HistogramDisplayFilter {
+        self.filter.setValue(NSNumber.doubleNumber(limit, min: self.minLowLimitValue, max: self.maxLowLimitValue), forKey: "inputLowLimit")
         return self
     }
     

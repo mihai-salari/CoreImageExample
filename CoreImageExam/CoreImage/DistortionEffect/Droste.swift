@@ -10,27 +10,27 @@ final class Droste: Rotation {
     
     let filter = CIFilter(name: "CIDroste")!
     
-    var minStrands: Float {
+    var minStrands: Double {
         return self.minValue(inputKey: "inputStrands")
     }
     
-    var maxStrands: Float {
+    var maxStrands: Double {
         return self.maxValue(inputKey: "inputStrands")
     }
     
-    var minPeriodicity: Float {
+    var minPeriodicity: Double {
         return self.minValue(inputKey: "inputPeriodicity")
     }
     
-    var maxPeriodicity: Float {
+    var maxPeriodicity: Double {
         return self.maxValue(inputKey: "inputPeriodicity")
     }
     
-    var minZoom: Float {
+    var minZoom: Double {
         return self.minValue(inputKey: "inputZoom")
     }
     
-    var maxZoom: Float {
+    var maxZoom: Double {
         return self.maxValue(inputKey: "inputZoom")
     }
 
@@ -44,18 +44,18 @@ final class Droste: Rotation {
         return self
     }
     
-    func strands(strands: Float) -> Droste {
-        self.filter.setValue(NSNumber.floatNumber(strands, min: self.minStrands, max: self.maxStrands), forKey: "inputStrands")
+    func strands(strands: Double) -> Droste {
+        self.filter.setValue(NSNumber.doubleNumber(strands, min: self.minStrands, max: self.maxStrands), forKey: "inputStrands")
         return self
     }
     
-    func periodicity(periodicity: Float) -> Droste {
-        self.filter.setValue(NSNumber.floatNumber(periodicity, min: self.minPeriodicity, max: self.maxPeriodicity), forKey: "inputPeriodicity")
+    func periodicity(periodicity: Double) -> Droste {
+        self.filter.setValue(NSNumber.doubleNumber(periodicity, min: self.minPeriodicity, max: self.maxPeriodicity), forKey: "inputPeriodicity")
         return self
     }
     
-    func zoom(zoom: Float) -> Droste {
-        self.filter.setValue(NSNumber.floatNumber(zoom, min: self.minZoom, max: self.maxZoom), forKey: "inputZoom")
+    func zoom(zoom: Double) -> Droste {
+        self.filter.setValue(NSNumber.doubleNumber(zoom, min: self.minZoom, max: self.maxZoom), forKey: "inputZoom")
         return self
     }
     

@@ -8,25 +8,25 @@ import CoreImage
 
 protocol EV: Processable {
     
-    var minEvValue: Float { get }
-    var maxEvValue: Float { get }
+    var minEvValue: Double { get }
+    var maxEvValue: Double { get }
     
-    func EV(ev: Float) -> Self
+    func EV(ev: Double) -> Self
     
 }
 
 extension EV {
     
-    var minEvValue: Float {
+    var minEvValue: Double {
         return self.minValue(inputKey: kCIInputEVKey)
     }
     
-    var maxEvValue: Float {
+    var maxEvValue: Double {
         return self.maxValue(inputKey: kCIInputEVKey)
     }
     
-    func EV(ev: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(ev, min: self.minEvValue, max: self.maxEvValue), forKey: kCIInputEVKey)
+    func EV(ev: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(ev, min: self.minEvValue, max: self.maxEvValue), forKey: kCIInputEVKey)
         return self
     }
     

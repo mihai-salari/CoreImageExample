@@ -8,25 +8,25 @@ import CoreImage
 
 protocol Width: Processable {
     
-    var minWidthValue: Float { get }
-    var maxWidthValue: Float { get }
+    var minWidthValue: Double { get }
+    var maxWidthValue: Double { get }
     
-    func width(width: Float) -> Self
+    func width(width: Double) -> Self
     
 }
 
 extension Width {
     
-    var minWidthValue: Float {
+    var minWidthValue: Double {
         return self.minValue(inputKey: kCIInputWidthKey)
     }
     
-    var maxWidthValue: Float {
+    var maxWidthValue: Double {
         return self.maxValue(inputKey: kCIInputWidthKey)
     }
     
-    func width(width: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(width, min: self.minWidthValue, max: self.maxWidthValue), forKey: kCIInputWidthKey)
+    func width(width: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(width, min: self.minWidthValue, max: self.maxWidthValue), forKey: kCIInputWidthKey)
         return self
     }
     

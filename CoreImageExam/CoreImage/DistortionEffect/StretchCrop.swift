@@ -10,19 +10,19 @@ final class StretchCrop: Processable {
     
     let filter = CIFilter(name: "CIStretchCrop")!
     
-    var minCropAmountValue: Float {
+    var minCropAmountValue: Double {
         return self.minValue(inputKey: "inputCropAmount")
     }
     
-    var maxCropAmountValue: Float {
+    var maxCropAmountValue: Double {
         return self.maxValue(inputKey: "inputCropAmount")
     }
     
-    var minCenterStretchAmountValue: Float {
+    var minCenterStretchAmountValue: Double {
         return self.minValue(inputKey: "inputCenterStretchAmount")
     }
     
-    var maxCenterStretchAmountValue: Float {
+    var maxCenterStretchAmountValue: Double {
         return self.maxValue(inputKey: "inputCenterStretchAmount")
     }
     
@@ -31,13 +31,13 @@ final class StretchCrop: Processable {
         return self
     }
     
-    func cropAmount(cropAmount: Float) -> StretchCrop {
-        self.filter.setValue(NSNumber.floatNumber(cropAmount, min: self.minCropAmountValue, max: self.maxCropAmountValue), forKey: "inputCropAmount")
+    func cropAmount(cropAmount: Double) -> StretchCrop {
+        self.filter.setValue(NSNumber.doubleNumber(cropAmount, min: self.minCropAmountValue, max: self.maxCropAmountValue), forKey: "inputCropAmount")
         return self
     }
     
-    func centerStretchAmount(stretchAmount: Float) -> StretchCrop {
-        self.filter.setValue(NSNumber.floatNumber(stretchAmount, min: self.minCenterStretchAmountValue, max: self.maxCenterStretchAmountValue), forKey: "inputCenterStretchAmount")
+    func centerStretchAmount(stretchAmount: Double) -> StretchCrop {
+        self.filter.setValue(NSNumber.doubleNumber(stretchAmount, min: self.minCenterStretchAmountValue, max: self.maxCenterStretchAmountValue), forKey: "inputCenterStretchAmount")
         return self
     }
     

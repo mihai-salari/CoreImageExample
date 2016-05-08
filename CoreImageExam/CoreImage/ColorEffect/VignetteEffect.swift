@@ -10,16 +10,16 @@ final class VignetteEffect: Center, Radius, Intensity {
 
     let filter = CIFilter(name: "CIVignetteEffect")!
     
-    var minFallOffValue: Float {
+    var minFallOffValue: Double {
         return self.minValue(inputKey: "inputFallOff")
     }
     
-    var maxFallOffValue: Float {
+    var maxFallOffValue: Double {
         return self.maxValue(inputKey: "inputFallOff")
     }
     
-    func fallOff(fallOff: Float) -> VignetteEffect {
-        self.filter.setValue(NSNumber.floatNumber(fallOff, min: self.minFallOffValue, max: self.maxFallOffValue), forKey: "inputFallOff")
+    func fallOff(fallOff: Double) -> VignetteEffect {
+        self.filter.setValue(NSNumber.doubleNumber(fallOff, min: self.minFallOffValue, max: self.maxFallOffValue), forKey: "inputFallOff")
         return self
     }
     

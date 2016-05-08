@@ -8,25 +8,25 @@ import CoreImage
 
 protocol Scale: Processable {
     
-    var minScaleValue: Float { get }
-    var maxScaleValue: Float { get }
+    var minScaleValue: Double { get }
+    var maxScaleValue: Double { get }
     
-    func scale(scale: Float) -> Self
+    func scale(scale: Double) -> Self
     
 }
 
 extension Scale {
     
-    var minScaleValue: Float {
+    var minScaleValue: Double {
         return self.minValue(inputKey: kCIInputScaleKey)
     }
     
-    var maxScaleValue: Float {
+    var maxScaleValue: Double {
         return self.maxValue(inputKey: kCIInputScaleKey)
     }
     
-    func scale(scale: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(scale, min: self.minScaleValue, max: self.maxScaleValue), forKey: kCIInputScaleKey)
+    func scale(scale: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(scale, min: self.minScaleValue, max: self.maxScaleValue), forKey: kCIInputScaleKey)
         return self
     }
     

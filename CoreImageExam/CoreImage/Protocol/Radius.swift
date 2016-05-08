@@ -8,25 +8,25 @@ import CoreImage
 
 protocol Radius: Processable {
     
-    var minRadiusValue: Float { get }
-    var maxRadiusValue: Float { get }
+    var minRadiusValue: Double { get }
+    var maxRadiusValue: Double { get }
     
-    func radius(radius: Float) -> Self
+    func radius(radius: Double) -> Self
     
 }
 
 extension Radius {
     
-    var minRadiusValue: Float {
+    var minRadiusValue: Double {
         return self.minValue(inputKey: kCIInputRadiusKey)
     }
     
-    var maxRadiusValue: Float {
+    var maxRadiusValue: Double {
         return self.maxValue(inputKey: kCIInputRadiusKey)
     }
     
-    func radius(radius: Float) -> Self {
-        self.filter.setValue(NSNumber.floatNumber(radius, min: self.minRadiusValue, max: self.maxRadiusValue), forKey: kCIInputRadiusKey)
+    func radius(radius: Double) -> Self {
+        self.filter.setValue(NSNumber.doubleNumber(radius, min: self.minRadiusValue, max: self.maxRadiusValue), forKey: kCIInputRadiusKey)
         return self
     }
     
