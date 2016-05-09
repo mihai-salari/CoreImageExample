@@ -6,21 +6,8 @@
 import Foundation
 import CoreImage
 
-final class AreaHistogram: Extent, Scale {
+final class AreaHistogram: Count, Extent, Scale {
     
     let filter = CIFilter(name: "CIAreaHistogram")!
-    
-    var minCountValue: Int {
-        return self.maxValue(inputKey: "inputCount")
-    }
-    
-    var maxCountValue: Int {
-        return self.maxValue(inputKey: "inputCount")
-    }
-    
-    func count(count: Int) -> AreaHistogram {
-        self.filter.setValue(NSNumber.intNumber(count, min: self.minCountValue, max: self.maxCountValue), forKey: "inputCount")
-        return self
-    }
     
 }
